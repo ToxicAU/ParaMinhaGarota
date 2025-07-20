@@ -44,10 +44,10 @@
         }
         .carousel {
             position: relative;
-            width: 100vw;
-            max-width: 540px;
-            height: 100vh;
-            max-height: 960px;
+            width: 100%;
+            max-width: 400px; /* Mantém o formato retrato e enquadra no site */
+            aspect-ratio: 9/16; /* Proporção retrato (ex: 1080x1920) */
+            height: auto;
             margin: 0 auto;
             overflow: hidden;
             border-radius: 24px;
@@ -60,9 +60,7 @@
         .carousel img {
             width: 100%;
             height: 100%;
-            max-width: 540px;
-            max-height: 960px;
-            object-fit: contain; /* Garante que a imagem não será cortada */
+            object-fit: contain; /* Mantém a imagem inteira e proporcional */
             display: none;
             position: absolute;
             top: 0; left: 0;
@@ -111,18 +109,12 @@
         /* Responsivo */
         @media (max-width: 600px) {
             .carousel {
-                width: 100vw;
-                max-width: 100vw;
-                height: 70vh;
-                max-height: 70vh;
-                min-width: 0;
-                min-height: 0;
+                max-width: 90vw;
+                aspect-ratio: 9/16;
             }
             .carousel img {
                 width: 100%;
                 height: 100%;
-                max-width: 100vw;
-                max-height: 70vh;
                 object-fit: contain;
             }
             h1 {
@@ -141,18 +133,12 @@
         }
         @media (max-width: 400px) {
             .carousel {
-                width: 100vw;
-                max-width: 100vw;
-                height: 50vh;
-                max-height: 50vh;
-                min-width: 0;
-                min-height: 0;
+                max-width: 98vw;
+                aspect-ratio: 9/16;
             }
             .carousel img {
                 width: 100%;
                 height: 100%;
-                max-width: 100vw;
-                max-height: 50vh;
                 object-fit: contain;
             }
             #specialMsg {
