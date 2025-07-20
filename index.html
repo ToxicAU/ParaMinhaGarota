@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presente Especial</title>
+    <!-- Fonte bonita do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #2d0036 0%, #1a1a2e 100%);
+            color: #fff;
+        }
+        h1, p, #specialMsg, footer {
+            font-family: 'Pacifico', cursive;
+            color: #ffb6c1;
+        }
+        h1 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-top: 24px;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 12px 8px;
+        }
+        .carousel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 32px 0 16px 0;
+        }
+        .hearts {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 8px;
+            user-select: none;
+        }
+        .carousel {
+            position: relative;
+            width: 540px !important;
+            height: 960px !important;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(255,182,193,0.25);
+            background: #23234b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel img {
+            width: 540px !important;
+            height: 960px !important;
+            object-fit: cover;
+            display: none;
+            position: absolute;
+            top: 0; left: 0;
+            border-radius: 24px;
+            box-shadow: 0 2px 16px rgba(255,182,193,0.18);
+        }
+        .carousel img.active {
+            display: block;
+        }
+        #revealBtn {
+            padding: 12px 28px;
+            border-radius: 12px;
+            background: linear-gradient(90deg,#ffb6c1,#d6336c);
+            border: none;
+            font-size: 1.1rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            margin: 24px auto 0 auto;
+            box-shadow: 0 2px 8px rgba(255,182,193,0.18);
+            transition: background 0.3s;
+        }
+        #revealBtn:hover {
+            background: linear-gradient(90deg,#d6336c,#ffb6c1);
+        }
+        #specialMsg {
+            display:none;
+            margin-top:20px;
+            padding:20px;
+            border-radius: 24px;
+            background:linear-gradient(135deg,#23234b 60%,#2d0036 100%);
+            box-shadow:0 2px 16px rgba(255,182,193,0.18);
+            font-size:1.15rem;
+            color:#ffb6c1;
+            text-align:center;
+            max-width: 95vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        footer {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 1.1rem;
+            color: #ffb6c1;
+            font-family: 'Pacifico', cursive;
+        }
+        /* Responsivo */
+        @media (max-width: 600px) {
+            .carousel {
+                width: 540px !important;
+                height: 960px !important;
+                min-width: 540px !important;
+                min-height: 960px !important;
+            }
+            .carousel img {
+                width: 540px !important;
+                height: 960px !important;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p, #specialMsg {
+                font-size: 1rem;
+            }
+            #revealBtn {
+                font-size: 1rem;
+                padding: 10px 18px;
+            }
+            .hearts {
+                font-size: 1.5rem;
+            }
+        }
+        @media (max-width: 400px) {
+            .carousel {
+                width: 540px !important;
+                height: 960px !important;
+                min-width: 540px !important;
+                min-height: 960px !important;
+            }
+            .carousel img {
+                width: 540px !important;
+                height: 960px !important;
+            }
+            #specialMsg {
+                padding: 10px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Olá meu amor...</h1>
+        <p>Esse é um simples presente para você, mas espero que goste.</p>
+        <div class="carousel-container">
+            <div class="hearts">❤️💖💕💗💞💝</div>
+            <div class="carousel" id="carousel">
+                <img src="IMG_20250711_153409_894.jpg" class="active">
+                <img src="IMG_20250627_183011_612.jpg">
+                <img src="IMG_20250102_232353_932.jpg">
+                <img src="IMG_20250414_142140_411.jpg">
+                <img src="IMG_20250611_233048_774.jpg">
+                <img src="IMG_20250627_183455_868.jpg">
+            </div>
+            <div class="hearts">💝💞💗💕💖❤️</div>
+        </div>
+        <p>Você é a razão do meu sorriso, e eu te amo mais do que palavras podem expressar.</p>
+    </div>
+    <div>
+        <button id="revealBtn">
+            Clique para revelar uma mensagem especial
+        </button>
+        <div id="specialMsg">
+            Sabe meu amor... você é a pessoa mais importante da minha vida, a única coisa que eu tenho... e a única coisa com o qual eu me importo. <br>
+            Eu nunca vou esquecer o dia que eu te vi pela primeira vez, como eu fiquei completamente apaixonado por você. <br>
+            Ainda lembro da primeiro vez que nos vimos por acaso naquela pizzaria... Ah como você estava linda... Você sabe, eu fiquei completamente perdido e até travei <br>
+            Você é me faz o garoto mais feliz desse mundo, e eu sei que eu não sou perfeito, sou cheito de problemas e difícl de lidar... <br>
+            Desculpe por todas as vezes que eu te deixei triste, ou que eu não fui o namorado que você merecia. <br>
+            Mas eu quero que você saiba que eu estou aqui, sempre estarei aqui, e eu vou fazer o possível para te fazer feliz. <br>
+            Eu te amo mais do que tudo, e eu quero passar o resto da minha vida com você. <br>
+            Você é a minha razão de viver, e eu não consigo imaginar um futuro sem você ao meu lado. <br>
+            Você me salvou garota... trouxe razão de volta a minha vida <br>
+            Eu juro que se não fosse você na minha vida, eu ja teria me matado... <br>
+            Dsculpe se sou ciumento demais, se fico mal por qualquer coisa... me desculpa pelo meu jeito dificil de lidar, mas eu não consigo evitar... <br>
+            Eu nunca tive ninguem que me amasse de verdade, e eu tenho muito medo de perder... Eu não gosto de te dividir com ninguem, mas por mais que eu queira, eu sei que você não será totalmente minha... Ainda vou ter que te dividir... <br>
+            Eu não sei muito o que escrever me desculpe... você sabe, eu sou péssimo em me expressar... <br>
+            Mas eu quero que você saiba que eu te amo mais do que tudo, e que eu vou fazer o possível para te fazer feliz. <br>
+            Eu quero passar o resto da minha vida com você, e eu quero que você saiba que eu estou aqui para você, sempre. <br>
+            Eu te amo, e eu sempre vou te amar. <br>
+        </div>
+        <script>
+            document.getElementById('revealBtn').onclick = function() {
+                document.getElementById('specialMsg').style.display = 'block';
+                this.style.display = 'none';
+            };
+        </script>
+    </div>
+    <div style="text-align:center; margin: 32px 0;">
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1WbhIxkn5ECsOwUm795iX1?utm_source=generator&theme=0" width="80%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <footer>
+        <p>Com amor, seu eterno apaixonado.</p>
+    </footer>
+    <script>
+        const imgs = document.querySelectorAll('.carousel img');
+        const carousel = document.getElementById('carousel');
+        let idx = 0;
+        let startX = null;
+
+        function showImage(i) {
+            imgs.forEach((img, j) => img.classList.toggle('active', j === i));
+        }
+
+        // Eventos de toque para mobile
+        carousel.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) {
+                startX = e.touches[0].clientX;
+            }
+        });
+
+        carousel.addEventListener('touchend', function(e) {
+            if (startX === null) return;
+            let endX = e.changedTouches[0].clientX;
+            let diff = endX - startX;
+            if (Math.abs(diff) > 40) { // Sensibilidade do swipe
+                if (diff < 0) {
+                    // Swipe para esquerda (próxima imagem)
+                    idx = (idx + 1) % imgs.length;
+                } else {
+                    // Swipe para direita (imagem anterior)
+                    idx = (idx - 1 + imgs.length) % imgs.length;
+                }
+                showImage(idx);
+            }
+            startX = null;
+        });
+
+        // Eventos de mouse para desktop (opcional)
+        let mouseDownX = null;
+        carousel.addEventListener('mousedown', function(e) {
+            mouseDownX = e.clientX;
+        });
+        carousel.addEventListener('mouseup', function(e) {
+            if (mouseDownX === null) return;
+            let diff = e.clientX - mouseDownX;
+            if (Math.abs(diff) > 40) {
+                if (diff < 0) {
+                    idx = (idx + 1) % imgs.length;
+                } else {
+                    idx = (idx - 1 + imgs.length) % imgs.length;
+                }
+                showImage(idx);
+            }
+            mouseDownX = null;
+        });
+    </script>
+</body>
+</html>
