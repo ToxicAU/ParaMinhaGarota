@@ -48,6 +48,7 @@
             max-width: 400px; /* Mantém o formato retrato e enquadra no site */
             aspect-ratio: 9/16; /* Proporção retrato (ex: 1080x1920) */
             height: auto;
+            min-height: 400px; /* Adicionado para garantir altura mínima */
             margin: 0 auto;
             overflow: hidden;
             border-radius: 24px;
@@ -63,10 +64,13 @@
             object-fit: contain; /* Mantém a imagem inteira e proporcional */
             display: none;
             position: absolute;
-            top: 0; left: 0;
+            inset: 0; /* top: 0; left: 0; right: 0; bottom: 0; */
             border-radius: 24px;
             box-shadow: 0 2px 16px rgba(255,182,193,0.18);
             background: #23234b;
+        }
+        .carousel img.active {
+            display: block;
         }
         #revealBtn {
             padding: 12px 28px;
